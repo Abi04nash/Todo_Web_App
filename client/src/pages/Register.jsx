@@ -25,7 +25,7 @@ const Register = () => {
     }
 
     try {
-      const res = await axios.post("http://localhost:8000/api/v1/user/register", user, {
+      const res = await axios.post("https://todo-web-app-x5um.onrender.com/api/v1/user/register", user, {
         headers: { 'Content-Type': 'application/json' },
         withCredentials: true,
       });

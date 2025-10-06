@@ -21,7 +21,7 @@ const Home = () => {
 
     const addTodoHandler = async () => {
         try {
-            const res = await axios.post("http://localhost:8000/api/v1/todo", { title, description }, {
+            const res = await axios.post("https://todo-web-app-x5um.onrender.com/api/v1/todo", { title, description }, {
                 headers: {
                     'Content-Type': "application/json",
                 },
@@ -67,7 +67,7 @@ const Home = () => {
         try {
             const { title, description } = editingValues[id];
             const res = await axios.put(
-                `http://localhost:8000/api/v1/todo/${id}`,
+                `https://todo-web-app-x5um.onrender.com/api/v1/todo/${id}`,
                 { title, description },
                 { withCredentials: true, headers: { 'Content-Type': 'application/json' } }
             );
@@ -95,7 +95,7 @@ const Home = () => {
 
     const deleteTodoHandler = async (id) => {
         try {
-            const res = await axios.delete(`http://localhost:8000/api/v1/todo/${id}`, {
+            const res = await axios.delete(`https://todo-web-app-x5um.onrender.com/api/v1/todo/${id}`, {
                 withCredentials: true
             });
             if (res.data.success) {
@@ -111,7 +111,7 @@ const Home = () => {
     useEffect(() => {
         const fetchTodo = async () => {
             try {
-                const res = await axios.get("http://localhost:8000/api/v1/todo", {
+                const res = await axios.get("https://todo-web-app-x5um.onrender.com/api/v1/todo", {
                     withCredentials: true,
                     headers: {
                         'Cache-Control': 'no-cache',
